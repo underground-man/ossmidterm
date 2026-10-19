@@ -24,11 +24,12 @@ function render(list = loans) {
     // TODO Q4-A: loan.returned 값에 따라 상태 문구와 Bootstrap badge 클래스 설정
     statusCell.textContent =  loan.returned ? "반납완료": "대여중";
     statusCell.className= "badge";
+    tr.appendChild(statusCell);
 
     
 
 
-    statusCell.textContent = loan.returned ? "완료" : "진행중";
+   // statusCell.textContent = loan.returned ? "완료" : "진행중";
     tr.appendChild(statusCell);
 
     const actions = document.createElement("td");
@@ -51,7 +52,7 @@ function render(list = loans) {
     loan.returned==true;
   });
 
-  summary.textContent="전체건수" + loans.length + " 반납완료 "+ ge.length;
+  summary.textContent="전체건수" + loans.length + "건 반납완료 "+ ge.length+ "건";
 
 
 
