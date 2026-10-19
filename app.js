@@ -22,7 +22,11 @@ function render(list = loans) {
     });
     const statusCell = document.createElement("td");
     // TODO Q4-A: loan.returned 값에 따라 상태 문구와 Bootstrap badge 클래스 설정
+    statusCell.textContent =  loan.returned ? "반납완료": "대여중";
+    statusCell.className= "badge";
+
     
+
 
     statusCell.textContent = loan.returned ? "완료" : "진행중";
     tr.appendChild(statusCell);
@@ -42,6 +46,12 @@ function render(list = loans) {
     rows.appendChild(tr);
   });
   // TODO Q4-B: #summary에 전체 건수와 반납완료 건수 출력
+  
+  const ge = loans.filter(function(loan){
+    loan.returned==true;
+  });
+
+  summary.textContent="전체건수" + loans.length + " 반납완료 "+ ge.length;
 
 
 
