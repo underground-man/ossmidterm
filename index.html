@@ -6,7 +6,7 @@
   <title>캠퍼스 기자재 대여 관리</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script src="app.js" defer> </script>
 </head>
 <body>
 <main class="container my-4">
@@ -16,14 +16,25 @@
     <h2>대여 정보 등록</h2>
     <form id="loanForm">
       <div class="mb-3">
-        <label for="borrower">대여자</label>
-        <input id="borrower" name="borrower" type="text" required>
+        <label for="borrower" >대여자</label>
+        <input id="borrower" name="borrower" type="text" class="form-control" minlength="2"  required>
       </div>
       <div class="mb-3">
         <label for="equipment">기자재명</label>
-        <input id="equipment" name="equipment" type="text" required>
+        <input id="equipment" name="equipment" type="text" class="form-control" required>
       </div>
       <!-- TODO Q3-A: 분류 select, 반납예정일 date 입력 요소 작성 -->
+      <select id="q3select" class="form-select">
+        <option value="">선택하세요</option>
+        <option value="전자기기">전자기기</option>
+        <option value="촬영기기">촬영기기</option>
+        <option value="음향기기">음향기기</option>
+      </select>
+      
+      <label for = "q3input">반납예정일</label>
+      <input id="q3input" type= "date" required>
+
+
       <button type="submit" id="addBtn">대여 등록</button>
     </form>
     <p id="message" aria-live="polite"></p>
@@ -31,6 +42,13 @@
   <section class="panel">
     <h2>대여 현황</h2>
     <!-- TODO Q5-A: 분류 필터 select 추가 (id="categoryFilter") -->
+     <select id="categoryFilter">
+        <option value="">전체</option>
+        <option value="">전체</option>
+        <option value="">전체</option>
+        <option value="">전체</option>
+     </select>
+
     <div class="table-responsive">
       <table id="loanTable">
         <thead><tr><th>번호</th><th>대여자</th><th>기자재</th><th>분류</th><th>반납예정일</th><th>상태</th><th>관리</th></tr></thead>

@@ -22,7 +22,7 @@ function render(list = loans) {
     });
     const statusCell = document.createElement("td");
     // TODO Q4-A: loan.returned 값에 따라 상태 문구와 Bootstrap badge 클래스 설정
-
+    
 
     statusCell.textContent = loan.returned ? "완료" : "진행중";
     tr.appendChild(statusCell);
@@ -62,8 +62,24 @@ function removeLoan(id) {
 }
 
 // TODO Q3-B: submit 이벤트 처리, 유효성 검사, 새로운 객체 추가, reset, 메시지 및 render
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return;
+  }
+  
+  const borrower = document.querySelector("#borrower");
+  const equipment = document.querySelector("#equipment");
+  const q3select = document.querySelector("#q3select");
+  const q3input = document.querySelector("#q3input");
+
+  const loan = {id: nextId, borrower:borrower.value, equipment: equipment.value, category:q3select.value, dueDate:q3input.checked, returned:false};
+  render();
+  message.textContent="대여등록이 완료되었습니다";
 
 
+});
 
 // TODO Q5-B: #categoryFilter의 change 이벤트, 분류별 filter 및 render
 

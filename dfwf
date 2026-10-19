@@ -1,0 +1,13 @@
+[33mcommit b87754bdb89eea9fe7f278e55da0c9e4d7f9a41d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Jang Soyeon <jerry1004@handong.edu>
+Date:   Mon Oct 19 09:54:26 2026 +0900
+
+    Revise README for project title and instructions
+    
+    Updated project title and modified sections for clarity.
+
+[33mcommit 130c1fc4e959ce25870b0da5be84421c143d724e[m
+Author: jerry10004 <jerry1004@handong.edu>
+Date:   Mon Oct 19 00:23:28 2026 +0900
+
+    create oss midterm starter2 project
